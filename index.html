@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocsLocal - Offline Document Editor</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/editor.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/toolbar.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button id="toggleSidebar" class="icon-button">
+                    <span class="material-icons">menu</span>
+                </button>
+                <h2>DocsLocal</h2>
+            </div>
+            <div class="file-actions">
+                <button id="newFile" class="primary-button">
+                    <span class="material-icons">add</span>New Document
+                </button>
+                <button id="newFolder" class="secondary-button">
+                    <span class="material-icons">create_new_folder</span>
+                </button>
+            </div>
+            <div class="search-bar">
+                <span class="material-icons">search</span>
+                <input type="text" id="searchFiles" placeholder="Search files...">
+            </div>
+            <div id="fileTree" class="file-tree"></div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Toolbar -->
+            <div class="toolbar" id="toolbar">
+                <div class="toolbar-group">
+                    <select id="fontFamily" class="toolbar-select">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                    <select id="fontSize" class="toolbar-select">
+                        <option value="1">8</option>
+                        <option value="2">10</option>
+                        <option value="3">12</option>
+                        <option value="4">14</option>
+                        <option value="5">18</option>
+                        <option value="6">24</option>
+                        <option value="7">36</option>
+                    </select>
+                </div>
+                <div class="toolbar-group">
+                    <button data-command="bold" class="toolbar-button"><span class="material-icons">format_bold</span></button>
+                    <button data-command="italic" class="toolbar-button"><span class="material-icons">format_italic</span></button>
+                    <button data-command="underline" class="toolbar-button"><span class="material-icons">format_underlined</span></button>
+                    <button data-command="strikeThrough" class="toolbar-button"><span class="material-icons">format_strikethrough</span></button>
+                </div>
+                <div class="toolbar-group">
+                    <button data-command="justifyLeft" class="toolbar-button"><span class="material-icons">format_align_left</span></button>
+                    <button data-command="justifyCenter" class="toolbar-button"><span class="material-icons">format_align_center</span></button>
+                    <button data-command="justifyRight" class="toolbar-button"><span class="material-icons">format_align_right</span></button>
+                    <button data-command="justifyFull" class="toolbar-button"><span class="material-icons">format_align_justify</span></button>
+                </div>
+                <div class="toolbar-group">
+                    <button data-command="insertUnorderedList" class="toolbar-button"><span class="material-icons">format_list_bulleted</span></button>
+                    <button data-command="insertOrderedList" class="toolbar-button"><span class="material-icons">format_list_numbered</span></button>
+                    <button id="insertTable" class="toolbar-button"><span class="material-icons">grid_on</span></button>
+                    <button id="insertImage" class="toolbar-button"><span class="material-icons">image</span></button>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none">
+                </div>
+                <div class="toolbar-group">
+                    <button id="exportDoc" class="toolbar-button"><span class="material-icons">download</span></button>
+                    <button id="importDoc" class="toolbar-button"><span class="material-icons">upload</span></button>
+                    <input type="file" id="importInput" accept=".txt,.html,.docx" style="display: none">
+                </div>
+            </div>
+
+            <!-- Editor -->
+            <div class="editor-container">
+                <div id="editor" class="editor" contenteditable="true"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Templates Modal -->
+    <div id="templatesModal" class="modal">
+        <div class="modal-content">
+            <h2>Choose Template</h2>
+            <div class="template-grid">
+                <div class="template-item" data-template="blank">Blank</div>
+                <div class="template-item" data-template="resume">Resume</div>
+                <div class="template-item" data-template="letter">Letter</div>
+                <div class="template-item" data-template="report">Report</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/fileManager.js"></script>
+    <script src="js/toolbar.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

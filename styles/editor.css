@@ -1,0 +1,85 @@
+.editor-container {
+    flex: 1;
+    padding: calc(var(--spacing-unit) * 3);
+    overflow-y: auto;
+    background-color: var(--background-color);
+}
+
+.editor {
+    width: 100%;
+    max-width: 800px;
+    min-height: 1000px;
+    margin: 0 auto;
+    padding: calc(var(--spacing-unit) * 4);
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    outline: none;
+}
+
+.editor img {
+    max-width: 100%;
+    height: auto;
+    margin: var(--spacing-unit) 0;
+}
+
+.editor table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-unit) 0;
+}
+
+.editor td, .editor th {
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-unit);
+}
+
+.editor blockquote {
+    border-left: 4px solid var(--primary-color);
+    margin: var(--spacing-unit) 0;
+    padding-left: calc(var(--spacing-unit) * 2);
+    color: var(--secondary-color);
+}
+
+.editor pre {
+    background-color: var(--hover-color);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.editor a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.editor a:hover {
+    text-decoration: underline;
+}
+
+/* Comments */
+.comment {
+    background-color: #fff3cd;
+    border-radius: 4px;
+    padding: var(--spacing-unit);
+    margin: var(--spacing-unit) 0;
+    font-size: 0.9em;
+}
+
+/* Version History */
+.version-history {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--background-color);
+    border-left: 1px solid var(--border-color);
+    padding: calc(var(--spacing-unit) * 2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.version-history.open {
+    transform: translateX(0);
+}

@@ -1,0 +1,23 @@
+{
+  "name": "docs-local",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "file-saver": "^2.0.5",
+    "html-to-docx": "^1.8.0",
+    "html2pdf.js": "^0.10.1",
+    "jspdf": "^2.5.1",
+    "marked": "^11.1.0",
+    "pdfmake": "^0.2.9"
+  }
+}
